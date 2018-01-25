@@ -1,11 +1,13 @@
 package com.eusun.mybatis.config
 
 import com.github.pagehelper.PageHelper
+import org.mybatis.spring.annotation.MapperScan
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import java.util.*
 
 @Configuration
+@MapperScan("com.eusun.mybatis.mapper")
 class MyBatisConfiguration {
     @Bean
     fun pageHelper(): PageHelper {
