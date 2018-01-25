@@ -23,7 +23,9 @@ class MybatisApplicationTests {
     fun testUserMapper() {
 //        userMapper.insert(UUID.randomUUID().toString(), "andy", 12)
         val mapper = sqlSessionFactory.openSession().getMapper(UserMapper::class.java)
-        Assert.assertNotNull(mapper.findByName("andy"))
+        val findByName = mapper.findByName("andy")
+
+        Assert.assertNotNull(findByName)
 
     }
 }
