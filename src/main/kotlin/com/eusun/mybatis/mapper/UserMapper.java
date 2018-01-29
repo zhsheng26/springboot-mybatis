@@ -14,6 +14,8 @@ public interface UserMapper {
     @Select("SELECT * FROM USER WHERE name = #{name}")
     UserEntity findByName(@Param("name") String name);
 
-    @Insert("INSERT INTO USER(id,name,age) VALUES(#{id},#{name}, #{age})")
-    int insert(@Param("id") String id, @Param("name") String name, @Param("age") int age);
+    @Insert("INSERT INTO USER(id,name,password) VALUES(#{id}, #{name}, #{password})")
+    int insert(@Param("id") String id,
+               @Param("name") String name,
+               @Param("password") String password);
 }
