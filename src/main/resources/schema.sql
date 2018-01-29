@@ -1,8 +1,7 @@
 CREATE TABLE IF NOT EXISTS USER (
   id     VARCHAR(255) PRIMARY KEY,
   name   VARCHAR(255) NOT NULL,
-  age    INT,
-  mobile VARCHAR(255),
+  password VARCHAR(255),
   UNIQUE KEY (name)
 )
   ENGINE = InnoDB

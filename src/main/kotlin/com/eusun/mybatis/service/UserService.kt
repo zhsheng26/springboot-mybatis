@@ -11,6 +11,7 @@ import javax.annotation.Resource
 class UserService {
     @Resource
     private lateinit var userMapper: UserMapper
+
     @Transactional
     fun createUser(user: UserEntity): Boolean {
         return try {
@@ -19,5 +20,13 @@ class UserService {
         } catch (e: Exception) {
             false
         }
+    }
+
+    fun getUserById(uid: String): UserEntity? {
+        return userMapper.findById(uid)
+    }
+
+    fun getUserByName(username: String): UserEntity? {
+        return userMapper.findByName(username)
     }
 }

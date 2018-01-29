@@ -43,5 +43,5 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	compile 'com.github.pagehelper:pagehelper:4.1.6'
+	compile 'com.github.pagehelper:pagehelper-spring-boot-starter:1.2.1'
 }

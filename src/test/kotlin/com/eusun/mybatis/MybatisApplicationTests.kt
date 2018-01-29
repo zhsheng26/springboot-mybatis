@@ -26,10 +26,20 @@ class MybatisApplicationTests {
 
     @Test
     fun testUserMapper() {
-//        userMapper.insert(UUID.randomUUID().toString(), "andy", 12)
-        val mapper = sqlSessionFactory.openSession().getMapper(UserMapper::class.java)
-        val findByName = mapper.findByName("andy")
-        Assert.assertNotNull(findByName)
+        userMapper.insert(UUID.randomUUID().toString(), "andy3", "111")
+//        val mapper = sqlSessionFactory.openSession().getMapper(UserMapper::class.java)
+//        val findByName = mapper.findByName("andy")
+//        Assert.assertNotNull(findByName)
+    }
+
+    @Test
+    fun testFromPageable() {
+        val size = 2
+        val list = userMapper.findAllFromPage(1, size)
+        list.forEach {
+            print(it)
+        }
+        Assert.assertEquals(size, list.size)
     }
 
     @Test
